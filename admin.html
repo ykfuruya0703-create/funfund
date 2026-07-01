@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>管理画面 | FunFund 不動産投資コラム</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg0:#070d16;--bg1:#0b1522;--bg2:#101f32;
+  --navy:#3b7dd8;--navy2:#6fa8ec;
+  --gold:#c9a54a;--gold2:#e3c477;
+  --green:#2fae6b;--teal:#2ba9a0;--wine:#b5543f;
+  --text:#e7ecf3;--text2:#94a4b8;--text3:#57647a;
+  --border:rgba(59,125,216,0.13);--border2:rgba(59,125,216,0.30);
+}
+body{font-family:'Hiragino Sans','Yu Gothic UI','Noto Sans JP',sans-serif;background:var(--bg0);color:var(--text);line-height:1.7;min-height:100vh}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:3px 12px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:1px solid}
+.tag-navy{background:rgba(59,125,216,0.09);color:var(--navy2);border-color:rgba(59,125,216,0.28)}
+.tag-gold{background:rgba(201,165,74,0.1);color:var(--gold2);border-color:rgba(201,165,74,0.3)}
+.tag-teal{background:rgba(43,169,160,0.1);color:#7fd6cc;border-color:rgba(43,169,160,0.32)}
+.tag-green{background:rgba(47,174,107,0.09);color:#7bdba4;border-color:rgba(47,174,107,0.3)}
+.tag-wine{background:rgba(181,84,63,0.1);color:#e0967d;border-color:rgba(181,84,63,0.32)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;font-size:11px;font-weight:700;text-decoration:none;transition:all .25s;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--border2);background:transparent;color:var(--navy2);cursor:pointer}
+.btn:hover{background:rgba(59,125,216,0.08);border-color:var(--navy2)}
+.btn-p{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;border:none;font-weight:800}
+.btn-p:hover{filter:brightness(1.1)}
+.btn-lg{padding:13px 28px;font-size:12px}
+.btn-danger{color:#e0967d;border-color:rgba(181,84,63,0.35)}
+.btn-danger:hover{background:rgba(181,84,63,0.1)}
+/* placeholder image (shared markup with index.html) */
+.ph-img{position:relative;overflow:hidden;display:flex;align-items:flex-end;background:linear-gradient(135deg,var(--c1,#182c40),var(--c2,#0b1620))}
+.ph-img::before{content:attr(data-mono);position:absolute;right:-6px;top:-16px;font-family:'Hiragino Mincho ProN','Yu Mincho',serif;font-size:56px;font-weight:700;color:rgba(255,255,255,0.08);line-height:1}
+.ph-cat{position:relative;z-index:1;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy2);padding:6px 10px;background:linear-gradient(0deg,rgba(0,0,0,0.55),transparent)}
+img.real-img{width:100%;height:100%;object-fit:cover;display:block}
+/* login */
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;position:relative}
+.login-wrap::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(59,125,216,0.08),transparent 65%);pointer-events:none}
+.login-box{position:relative;width:100%;max-width:380px;background:rgba(11,21,34,0.9);border:1px solid var(--border2);border-radius:16px;padding:44px 36px;text-align:center;box-shadow:0 40px 100px rgba(0,0,0,0.6)}
+.login-mark{width:52px;height:52px;margin:0 auto 20px;background:linear-gradient(135deg,var(--navy),var(--teal));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff}
+.login-box h1{font-size:20px;font-weight:800;margin-bottom:8px;letter-spacing:.3px}
+.login-box p.sub{font-size:12px;color:var(--text3);margin-bottom:28px;letter-spacing:.5px}
+.login-box input{width:100%;background:rgba(7,13,22,0.6);border:1px solid var(--border2);color:var(--text);padding:13px 16px;border-radius:8px;font-size:13px;margin-bottom:12px}
+.login-box input:focus{outline:none;border-color:var(--navy2)}
+.login-box .btn{width:100%;justify-content:center;margin-top:6px}
+.login-error{color:#e0967d;font-size:12px;margin-top:14px;min-height:16px}
+.login-hint{font-size:11px;color:var(--text3);margin-top:22px;line-height:1.8}
+.back-link{display:inline-block;margin-top:18px;font-size:11px;color:var(--text3);text-decoration:none;letter-spacing:.5px}
+.back-link:hover{color:var(--navy2)}
+/* dashboard */
+.dash-wrap{max-width:1240px;margin:0 auto;padding:0 32px 80px}
+.dash-header{display:flex;align-items:center;justify-content:space-between;padding:26px 0;border-bottom:1px solid var(--border);margin-bottom:36px;flex-wrap:wrap;gap:14px}
+.dash-header .logo{font-size:15px;font-weight:800;letter-spacing:.3px}
+.dash-header .logo span{color:var(--navy2);font-size:11px;letter-spacing:2px;margin-left:8px;text-transform:uppercase}
+.dash-header .actions{display:flex;gap:10px}
+.dash-grid{display:grid;grid-template-columns:420px 1fr;gap:28px;align-items:start}
+@media(max-width:1000px){.dash-grid{grid-template-columns:1fr}}
+.panel{background:rgba(11,21,34,0.75);border:1px solid var(--border);border-radius:16px;padding:28px}
+.panel h2{font-size:17px;font-weight:800;margin-bottom:22px;letter-spacing:.3px}
+.panel-hd{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.panel-hd h2{margin-bottom:0}
+label{display:block;font-size:11px;color:var(--text2);letter-spacing:.5px;margin-bottom:14px}
+label input, label textarea, label select{width:100%;margin-top:7px;background:rgba(7,13,22,0.6);border:1px solid var(--border2);color:var(--text);padding:11px 14px;border-radius:8px;font-size:13px;font-family:inherit}
+label input:focus, label textarea:focus, label select:focus{outline:none;border-color:var(--navy2)}
+label textarea{resize:vertical;line-height:1.8}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.char-count{display:block;text-align:right;font-size:10px;color:var(--text3);margin-top:4px}
+.img-preview{margin:-4px 0 16px;border-radius:8px;overflow:hidden;border:1px solid var(--border);min-height:2px}
+.img-preview img{width:100%;max-height:180px;object-fit:cover;display:block}
+.form-actions{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap}
+.file-btn{cursor:pointer;text-align:center}
+/* admin list */
+.admin-list{display:flex;flex-direction:column;gap:12px;max-height:1400px;overflow-y:auto}
+.admin-item{display:grid;grid-template-columns:90px 1fr auto;gap:16px;align-items:center;background:rgba(7,13,22,0.5);border:1px solid var(--border);border-radius:12px;padding:12px;transition:.2s}
+.admin-item:hover{border-color:var(--border2)}
+.admin-item-thumb{width:90px;height:64px;border-radius:8px;overflow:hidden}
+.admin-item-thumb .ph-img{height:100%}
+.admin-item-meta{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-size:11px;color:var(--text3)}
+.admin-item-title{font-size:13px;font-weight:700;color:#fff;line-height:1.5}
+.admin-item-actions{display:flex;gap:8px}
+@media(max-width:640px){
+  .admin-item{grid-template-columns:1fr;}
+  .admin-item-thumb{width:100%;height:120px}
+  .admin-item-actions{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+
+<div id="loginScreen" class="login-wrap">
+  <div class="login-box">
+    <div class="login-mark">FF</div>
+    <h1>管理画面ログイン</h1>
+    <p class="sub">FunFund 不動産投資コラム — 編集者専用ページ</p>
+    <form id="loginForm">
+      <input type="text" id="loginId" placeholder="ID" autocomplete="username" required>
+      <input type="password" id="loginPw" placeholder="パスワード" autocomplete="current-password" required>
+      <button type="submit" class="btn btn-p btn-lg">ログイン</button>
+      <p class="login-error" id="loginError"></p>
+    </form>
+    <p class="login-hint">初期ID: admin<br>初期パスワード: funfund2026（本番運用前に必ず変更してください）</p>
+    <a href="index.html" class="back-link">← サイトへ戻る</a>
+  </div>
+</div>
+
+<div id="dashboard" class="dash-wrap" style="display:none">
+  <div class="dash-header">
+    <div class="logo">FunFund<span>Admin</span></div>
+    <div class="actions">
+      <a href="index.html" target="_blank" class="btn">サイトを見る</a>
+      <button id="logoutBtn" class="btn">ログアウト</button>
+    </div>
+  </div>
+
+  <div class="dash-grid">
+    <section class="panel">
+      <h2 id="formTitle">新規コラムを作成</h2>
+      <form id="colForm">
+        <input type="hidden" id="fId">
+        <label>タイトル
+          <input type="text" id="fTitle" required>
+        </label>
+        <label>カテゴリ名
+          <input type="text" id="fCategory" required placeholder="例: 利回り解説 / 安心のしくみ / 税金・法律">
+        </label>
+        <label>タグの色
+          <select id="fCatClass">
+            <option value="gold">ゴールド</option>
+            <option value="teal">ティール</option>
+            <option value="green">グリーン</option>
+            <option value="wine">ワイン</option>
+          </select>
+        </label>
+        <label>英字サブタイトル（任意）
+          <input type="text" id="fEn" placeholder="例: BEYOND THE YIELD NUMBER">
+        </label>
+        <div class="two-col">
+          <label>公開日
+            <input type="date" id="fDate" required>
+          </label>
+          <label>読了目安
+            <input type="text" id="fRead" placeholder="例: 6分" required>
+          </label>
+        </div>
+        <label>写真URL（任意・空欄なら配色グラデーションを自動生成）
+          <input type="text" id="fImageUrl" placeholder="https://...">
+        </label>
+        <label>または画像ファイルをアップロード（任意）
+          <input type="file" id="fImageFile" accept="image/*">
+        </label>
+        <div id="imgPreview" class="img-preview"></div>
+        <label>一覧用の要約（カード表示用）
+          <textarea id="fExcerpt" rows="2" required></textarea>
+        </label>
+        <label>本文（段落ごとに空行で区切ってください）
+          <textarea id="fBody" rows="8" required placeholder="1段落目...&#10;&#10;2段落目...&#10;&#10;3段落目..."></textarea>
+        </label>
+        <label>meta description（検索結果等に表示される説明文。120文字前後推奨）
+          <textarea id="fDescription" rows="3" required maxlength="160"></textarea>
+          <span class="char-count" id="descCount">0 / 160</span>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-p btn-lg">保存する</button>
+          <button type="button" id="resetFormBtn" class="btn">新規作成に戻す</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="panel-hd">
+        <h2>登録済みコラム一覧</h2>
+        <div class="actions">
+          <button id="exportBtn" class="btn">JSONエクスポート</button>
+          <label class="btn file-btn">JSONインポート<input type="file" id="importFile" accept="application/json" style="display:none"></label>
+        </div>
+      </div>
+      <div id="adminList" class="admin-list"></div>
+    </section>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+const ADMIN_ID = 'admin';
+const SESSION_KEY = 'ff_admin_session';
+
+let currentImageData = '';
+
+async function sha256Hex(str){
+  const enc = new TextEncoder().encode(str);
+  const buf = await crypto.subtle.digest('SHA-256', enc);
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+/* sha256('funfund2026') 事前計算値 */
+const ADMIN_PW_HASH_SHA256 = 'd0282494362b50c1ccbfba59c0246f30077218cce34ba439df3ac34383710c3e';
+
+function isLoggedIn(){
+  return sessionStorage.getItem(SESSION_KEY) === '1';
+}
+
+function showDashboard(){
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('dashboard').style.display = 'block';
+  resetForm();
+  renderAdminList();
+}
+
+function showLogin(){
+  document.getElementById('dashboard').style.display = 'none';
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('loginPw').value = '';
+}
+
+document.getElementById('loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const id = document.getElementById('loginId').value.trim();
+  const pw = document.getElementById('loginPw').value;
+  const hash = await sha256Hex(pw);
+  if(id === ADMIN_ID && hash === ADMIN_PW_HASH_SHA256){
+    sessionStorage.setItem(SESSION_KEY, '1');
+    document.getElementById('loginError').textContent = '';
+    showDashboard();
+  } else {
+    document.getElementById('loginError').textContent = 'IDまたはパスワードが正しくありません。';
+  }
+});
+
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  sessionStorage.removeItem(SESSION_KEY);
+  showLogin();
+});
+
+function updateImgPreview(){
+  const wrap = document.getElementById('imgPreview');
+  if(!currentImageData){ wrap.innerHTML = ''; return; }
+  wrap.innerHTML = `<img src="${ffEscHtml(currentImageData)}" alt="preview">`;
+}
+
+document.getElementById('fImageFile').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    currentImageData = ev.target.result;
+    document.getElementById('fImageUrl').value = '';
+    updateImgPreview();
+  };
+  reader.readAsDataURL(file);
+});
+
+document.getElementById('fImageUrl').addEventListener('input', e => {
+  currentImageData = e.target.value.trim();
+  updateImgPreview();
+});
+
+document.getElementById('fDescription').addEventListener('input', e => {
+  document.getElementById('descCount').textContent = `${e.target.value.length} / 160`;
+});
+
+function formatDateForSave(v){
+  return v ? v.replaceAll('-', '.') : '';
+}
+function formatDateForInput(v){
+  return v ? v.replaceAll('.', '-') : '';
+}
+
+document.getElementById('colForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const existingId = document.getElementById('fId').value;
+  const col = {
+    id: existingId || ffGenerateId(),
+    category: document.getElementById('fCategory').value.trim(),
+    catClass: document.getElementById('fCatClass').value,
+    title: document.getElementById('fTitle').value.trim(),
+    en: document.getElementById('fEn').value.trim(),
+    image: currentImageData || '',
+    excerpt: document.getElementById('fExcerpt').value.trim(),
+    body: document.getElementById('fBody').value.trim().split(/\n\s*\n/).map(p => p.trim()).filter(Boolean),
+    description: document.getElementById('fDescription').value.trim(),
+    date: formatDateForSave(document.getElementById('fDate').value),
+    read: document.getElementById('fRead').value.trim()
+  };
+  ffUpsertColumn(col);
+  resetForm();
+  renderAdminList();
+});
+
+function resetForm(){
+  document.getElementById('colForm').reset();
+  document.getElementById('fId').value = '';
+  document.getElementById('fCatClass').value = 'gold';
+  document.getElementById('fDate').value = new Date().toISOString().slice(0, 10);
+  currentImageData = '';
+  updateImgPreview();
+  document.getElementById('descCount').textContent = '0 / 160';
+  document.getElementById('formTitle').textContent = '新規コラムを作成';
+}
+document.getElementById('resetFormBtn').addEventListener('click', resetForm);
+
+function loadForEdit(id){
+  const col = ffGetAllColumns().find(c => c.id === id);
+  if(!col) return;
+  document.getElementById('fId').value = col.id;
+  document.getElementById('fTitle').value = col.title || '';
+  document.getElementById('fCategory').value = col.category || '';
+  document.getElementById('fCatClass').value = col.catClass || 'gold';
+  document.getElementById('fEn').value = col.en || '';
+  document.getElementById('fDate').value = formatDateForInput(col.date || '');
+  document.getElementById('fRead').value = col.read || '';
+  document.getElementById('fImageUrl').value = (col.image && !col.image.startsWith('data:')) ? col.image : '';
+  currentImageData = col.image || '';
+  updateImgPreview();
+  document.getElementById('fExcerpt').value = col.excerpt || '';
+  document.getElementById('fBody').value = (col.body || []).join('\n\n');
+  document.getElementById('fDescription').value = col.description || '';
+  document.getElementById('descCount').textContent = `${(col.description || '').length} / 160`;
+  document.getElementById('formTitle').textContent = '編集: ' + col.title;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderAdminList(){
+  const cols = ffGetAllColumns();
+  const wrap = document.getElementById('adminList');
+  if(cols.length === 0){
+    wrap.innerHTML = '<p style="color:var(--text3);font-size:13px;">コラムがありません。左のフォームから作成してください。</p>';
+    return;
+  }
+  wrap.innerHTML = cols.map(col => `
+    <div class="admin-item">
+      <div class="admin-item-thumb">${ffPhImgHTML(col)}</div>
+      <div class="admin-item-body">
+        <div class="admin-item-meta"><span class="tag tag-${col.catClass}">${ffEscHtml(col.category)}</span><span>${ffEscHtml(col.date)}</span></div>
+        <div class="admin-item-title">${ffEscHtml(col.title)}</div>
+      </div>
+      <div class="admin-item-actions">
+        <button class="btn" data-edit="${ffEscHtml(col.id)}">編集</button>
+        <button class="btn btn-danger" data-del="${ffEscHtml(col.id)}">削除</button>
+      </div>
+    </div>
+  `).join('');
+  wrap.querySelectorAll('[data-edit]').forEach(b => b.addEventListener('click', () => loadForEdit(b.dataset.edit)));
+  wrap.querySelectorAll('[data-del]').forEach(b => b.addEventListener('click', () => {
+    if(confirm('このコラムを削除しますか？この操作は取り消せません。')){
+      ffDeleteColumn(b.dataset.del);
+      renderAdminList();
+    }
+  }));
+}
+
+document.getElementById('exportBtn').addEventListener('click', () => {
+  const data = ffGetAllColumns();
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'funfund-columns.json';
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+document.getElementById('importFile').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      const arr = JSON.parse(ev.target.result);
+      if(!Array.isArray(arr)) throw new Error('invalid format');
+      arr.forEach(col => { if(col && col.id) ffUpsertColumn(col); });
+      renderAdminList();
+      alert(`${arr.length}件のコラムを読み込みました。`);
+    } catch(err){
+      alert('JSONファイルの読み込みに失敗しました。形式をご確認ください。');
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = '';
+});
+
+if(isLoggedIn()) showDashboard(); else showLogin();
+</script>
+
+</body>
+</html>

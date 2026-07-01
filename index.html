@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">FunFund 不動産投資コラム | 堅実な資産形成のための実務知</title>
+<meta name="description" id="metaDesc" content="不動産クラウドファンディング「FunFund」が贈る、堅実な資産形成のための投資コラム。利回りの数字だけでは見えない仕組みとリスクを、専門家がわかりやすく解説します。">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg0:#070d16;--bg1:#0b1522;--bg2:#101f32;
+  --navy:#3b7dd8;--navy2:#6fa8ec;
+  --gold:#c9a54a;--gold2:#e3c477;
+  --green:#2fae6b;--teal:#2ba9a0;--wine:#b5543f;
+  --text:#e7ecf3;--text2:#94a4b8;--text3:#57647a;
+  --border:rgba(59,125,216,0.13);--border2:rgba(59,125,216,0.30);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Hiragino Sans','Yu Gothic UI','Noto Sans JP',sans-serif;background:var(--bg0);color:var(--text);overflow-x:hidden;line-height:1.75}
+.serif{font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 15% 8%,rgba(59,125,216,0.07) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 85% 85%,rgba(47,174,107,0.05) 0%,transparent 60%);pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,125,216,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(59,125,216,0.025) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:rgba(59,125,216,0.25);border-radius:2px}
+.container{max-width:1180px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+@media(max-width:768px){.container{padding:0 22px}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 20px rgba(59,125,216,0.18)}50%{box-shadow:0 0 48px rgba(59,125,216,0.4)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.animate-up{animation:fadeInUp .8s ease both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}
+.gradient-text{background:linear-gradient(135deg,var(--navy2) 0%,var(--teal) 55%,var(--gold2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gradient-gold{background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:1px solid}
+.tag-navy{background:rgba(59,125,216,0.09);color:var(--navy2);border-color:rgba(59,125,216,0.28)}
+.tag-gold{background:rgba(201,165,74,0.1);color:var(--gold2);border-color:rgba(201,165,74,0.3)}
+.tag-teal{background:rgba(43,169,160,0.1);color:#7fd6cc;border-color:rgba(43,169,160,0.32)}
+.tag-green{background:rgba(47,174,107,0.09);color:#7bdba4;border-color:rgba(47,174,107,0.3)}
+.tag-wine{background:rgba(181,84,63,0.1);color:#e0967d;border-color:rgba(181,84,63,0.32)}
+header{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;padding:0 40px;background:rgba(7,13,22,0.86);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;width:100%;max-width:1180px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:40px;height:40px;background:linear-gradient(135deg,var(--navy),var(--teal));border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#fff;flex-shrink:0}
+.logo-text b{font-size:14px;color:#fff;display:block;letter-spacing:.3px}
+.logo-text span{font-size:9px;color:var(--gold2);letter-spacing:2.5px;text-transform:uppercase}
+nav{display:flex;gap:28px;margin-left:48px}
+nav a{font-size:12px;color:var(--text2);text-decoration:none;letter-spacing:.5px;transition:.2s;position:relative}
+nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--navy2);transition:.3s}
+nav a:hover{color:var(--navy2)}nav a:hover::after{width:100%}
+.hdr-cta{margin-left:auto;display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;transition:all .2s;letter-spacing:.5px}
+.btn-o{background:transparent;border:1px solid var(--border2);color:var(--navy2)}
+.btn-o:hover{background:rgba(59,125,216,0.08)}
+.btn-p{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff}
+.btn-p:hover{filter:brightness(1.1)}
+.btn-lg{padding:14px 30px;font-size:13px;border-radius:10px}
+@media(max-width:960px){nav{display:none}}
+#hero{min-height:100vh;display:flex;align-items:center;padding:128px 0 80px;position:relative;overflow:hidden}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:6px 18px;border-radius:20px;background:rgba(59,125,216,0.07);border:1px solid rgba(59,125,216,0.24);font-size:10px;color:var(--navy2);letter-spacing:2px;text-transform:uppercase;margin-bottom:28px}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.hero-title{font-size:clamp(32px,4.8vw,58px);font-weight:800;line-height:1.4;letter-spacing:.5px;margin-bottom:24px}
+.hero-sub{font-size:clamp(13px,1.6vw,15.5px);color:var(--text2);max-width:530px;line-height:2;margin-bottom:40px}
+.hero-actions{display:flex;align-items:center;gap:16px;margin-bottom:56px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:44px;flex-wrap:wrap;padding-top:34px;border-top:1px solid var(--border)}
+.hs-val{font-size:28px;font-weight:800;letter-spacing:0;line-height:1}
+.hs-label{font-size:10px;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;margin-top:6px}
+.hero-grid{display:grid;grid-template-columns:1fr 400px;gap:78px;align-items:center}
+@media(max-width:1024px){.hero-grid{grid-template-columns:1fr}.hero-card-wrap{display:none}}
+.hero-card{background:rgba(11,21,34,0.92);border:1px solid var(--border2);border-radius:16px;box-shadow:0 40px 100px rgba(0,0,0,0.65),0 0 50px rgba(59,125,216,0.07);position:relative;overflow:hidden;animation:float 5.5s ease-in-out infinite}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--navy2),transparent);z-index:2}
+.hc-img{height:200px;position:relative}
+.hc-body{padding:26px}
+.hc-lbl{font-size:9px;color:var(--gold2);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.hc-t{font-size:16px;font-weight:700;line-height:1.6;margin-bottom:14px}
+.hc-tags{display:flex;flex-wrap:wrap;gap:6px}
+.hc-tag{font-size:9px;padding:4px 10px;border-radius:6px;background:rgba(59,125,216,0.06);color:var(--text2);border:1px solid var(--border)}
+section{padding:104px 0;position:relative;z-index:1}
+.sec-badge{margin-bottom:18px}
+.sec-title{font-size:clamp(23px,3vw,38px);font-weight:800;letter-spacing:.2px;line-height:1.5;margin-bottom:18px}
+.sec-desc{font-size:14px;color:var(--text2);max-width:620px;line-height:2}
+.sec-hd{margin-bottom:56px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:0 40px}
+/* trust KPI */
+#kpi{background:linear-gradient(180deg,var(--bg0),rgba(20,40,60,0.28),var(--bg0));padding:76px 0}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border)}
+@media(max-width:768px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+.kpi-card{background:var(--bg1);padding:38px 22px;text-align:center;position:relative;overflow:hidden;transition:.3s}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c,var(--navy2)),transparent)}
+.kpi-card:hover{background:rgba(16,31,50,0.95)}
+.kc-val{font-size:clamp(24px,3.2vw,38px);font-weight:800;letter-spacing:-.5px;line-height:1;margin-bottom:8px}
+.kc-lbl{font-size:11px;color:var(--text2);letter-spacing:.5px}
+.kc-sub{font-size:10px;color:var(--text3);margin-top:5px}
+/* trust / anshin box */
+#trust{background:var(--bg1)}
+.tr-box{background:rgba(11,21,34,0.9);border:1px solid rgba(47,174,107,0.22);border-radius:16px;padding:48px;position:relative;overflow:hidden;margin-top:48px}
+.tr-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent)}
+.tr-title{font-size:clamp(18px,2.4vw,25px);font-weight:800;letter-spacing:.2px;margin-bottom:14px;color:#fff;position:relative;z-index:1}
+.tr-title em{color:var(--green);font-style:normal}
+.tr-body{font-size:14.5px;color:var(--text2);line-height:2;max-width:800px;position:relative;z-index:1;margin-bottom:32px}
+.tr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;position:relative;z-index:1}
+.tr-item{background:rgba(7,13,22,0.75);border:1px solid var(--border);border-radius:12px;padding:22px;transition:all .3s}
+.tr-item:hover{border-color:rgba(47,174,107,0.3);transform:translateY(-3px)}
+.tr-ico{font-size:22px;margin-bottom:10px}
+.tr-t{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:8px}
+.tr-d{font-size:12.5px;color:var(--text2);line-height:1.85}
+/* concept */
+#concept{background:var(--bg0)}
+.con-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+@media(max-width:768px){.con-grid{grid-template-columns:1fr}}
+.con-quote{border-left:2px solid var(--navy2);padding-left:26px;margin-bottom:30px}
+.con-quote p{font-size:clamp(18px,2.3vw,25px);font-weight:800;line-height:1.75;letter-spacing:.2px}
+.con-quote p em{color:var(--navy2);font-style:normal}
+.con-body{font-size:14px;color:var(--text2);line-height:2}
+.cp-list{display:flex;flex-direction:column;gap:10px}
+.cp{display:flex;align-items:flex-start;gap:16px;background:rgba(11,21,34,0.7);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all .3s}
+.cp:hover{border-color:var(--border2)}
+.cp-ico{font-size:19px;flex-shrink:0;margin-top:1px;color:var(--navy2)}
+.cp-t{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:.3px}
+.cp-d{font-size:12px;color:var(--text2);line-height:1.8}
+/* pickup */
+#pickup{background:var(--bg1)}
+.pickup-card{display:grid;grid-template-columns:420px 1fr;border:1px solid var(--border2);border-radius:16px;overflow:hidden;background:rgba(11,21,34,0.6);cursor:pointer;transition:.35s}
+.pickup-card:hover{border-color:var(--navy2);box-shadow:0 30px 80px rgba(0,0,0,0.5)}
+@media(max-width:900px){.pickup-card{grid-template-columns:1fr}}
+.pickup-card .ph-img{height:100%;min-height:300px}
+.pickup-body{padding:42px}
+.pu-meta{display:flex;gap:14px;align-items:center;margin-bottom:18px;font-size:11px;color:var(--text3);letter-spacing:1px}
+.pu-title{font-size:clamp(19px,2.4vw,27px);font-weight:800;line-height:1.6;margin-bottom:16px}
+.pu-excerpt{font-size:13.5px;color:var(--text2);line-height:2;margin-bottom:24px}
+.pu-link{font-size:11px;color:var(--navy2);letter-spacing:1.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px}
+/* placeholder image texture */
+.ph-img{position:relative;overflow:hidden;display:flex;align-items:flex-end;background:linear-gradient(135deg,var(--c1,#182c40),var(--c2,#0b1620))}
+.ph-img::before{content:attr(data-mono);position:absolute;right:-6px;top:-22px;font-family:'Hiragino Mincho ProN','Yu Mincho',serif;font-size:110px;font-weight:700;color:rgba(255,255,255,0.05);line-height:1}
+.ph-img::after{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:3px 3px;opacity:.4;mix-blend-mode:overlay}
+.ph-cat{position:relative;z-index:1;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy2);padding:10px 14px;background:linear-gradient(0deg,rgba(0,0,0,0.55),transparent)}
+img.real-img{width:100%;height:100%;object-fit:cover;display:block}
+/* columns grid */
+#columns{background:var(--bg0)}
+.filter-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px}
+.f-tag{font-size:11px;letter-spacing:1px;padding:8px 18px;border-radius:20px;border:1px solid var(--border);color:var(--text2);background:transparent;cursor:pointer;transition:.25s}
+.f-tag:hover{border-color:var(--border2);color:#fff}
+.f-tag.active{border-color:var(--navy2);color:var(--navy2);background:rgba(59,125,216,0.07)}
+.col-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:1024px){.col-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.col-grid{grid-template-columns:1fr}}
+.col-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:rgba(11,21,34,0.55);cursor:pointer;transition:all .3s;display:flex;flex-direction:column}
+.col-card:hover{border-color:var(--border2);transform:translateY(-4px)}
+.col-card .ph-img{height:200px}
+.col-body{padding:22px 22px 26px;flex:1;display:flex;flex-direction:column}
+.col-meta{font-size:10px;color:var(--text3);letter-spacing:1px;margin-bottom:10px}
+.col-title{font-size:14.5px;font-weight:700;line-height:1.7;color:#fff;margin-bottom:10px}
+.col-excerpt{font-size:12px;color:var(--text2);line-height:1.9;flex:1}
+.col-read{margin-top:16px;font-size:10px;color:var(--navy2);letter-spacing:1.5px;text-transform:uppercase}
+/* guide */
+#guide{background:var(--bg1)}
+.guide-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
+@media(max-width:1024px){.guide-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.guide-grid{grid-template-columns:repeat(2,1fr)}}
+.guide{background:rgba(11,21,34,0.7);border:1px solid var(--border);border-radius:12px;padding:26px 18px;text-align:center;transition:all .3s}
+.guide:hover{border-color:var(--border2);transform:translateY(-3px)}
+.guide-n{font-size:10px;color:var(--navy2);letter-spacing:2px;margin-bottom:12px}
+.guide-i{font-size:26px;margin-bottom:12px}
+.guide-l{font-size:12px;color:var(--text2);font-weight:600;line-height:1.6}
+/* faq */
+#faq{background:var(--bg0)}
+.faq-list{display:flex;flex-direction:column;gap:12px;margin-top:44px}
+.faq-item{background:rgba(11,21,34,0.7);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:.25s}
+.faq-item:hover{border-color:var(--border2)}
+.faq-q{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:13.5px;font-weight:700;color:#fff;gap:16px}
+.faq-q .q-ico{color:var(--navy2);font-size:16px;flex-shrink:0;transition:.3s}
+.faq-item.open .q-ico{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 24px 20px;font-size:12.5px;color:var(--text2);line-height:1.9}
+/* cta / newsletter */
+#cta{padding:120px 0;text-align:center;position:relative;overflow:hidden;background:var(--bg1)}
+#cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(59,125,216,0.07),transparent 70%)}
+.cta-t{font-size:clamp(25px,3.4vw,42px);font-weight:800;letter-spacing:.2px;line-height:1.55;margin-bottom:18px}
+.cta-d{font-size:14px;color:var(--text2);max-width:480px;margin:0 auto 40px;line-height:1.9}
+.cta-form{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.cta-form input{background:rgba(7,13,22,0.6);border:1px solid var(--border2);color:var(--text);padding:14px 18px;border-radius:8px;font-size:13px;min-width:260px}
+.cta-form input:focus{outline:none;border-color:var(--navy2)}
+.cta-note{font-size:11px;color:var(--text3);letter-spacing:.5px}
+.glow{animation:pulseGlow 3.2s ease-in-out infinite}
+footer{background:rgba(5,9,15,0.95);border-top:1px solid var(--border);padding:32px 40px;text-align:center}
+footer p{font-size:12px;color:var(--text3)}
+footer strong{color:var(--text2)}
+.disclaimer{max-width:760px;margin:0 auto 16px;font-size:10.5px;color:var(--text3);line-height:1.9}
+/* article modal */
+.article-modal{position:fixed;inset:0;z-index:200;background:rgba(4,7,12,0.92);backdrop-filter:blur(6px);display:none;overflow-y:auto;padding:70px 20px}
+.article-modal.open{display:block}
+.am-inner{max-width:760px;margin:0 auto;background:var(--bg1);border:1px solid var(--border2);border-radius:16px;overflow:hidden;box-shadow:0 50px 120px rgba(0,0,0,0.7);animation:fadeInUp .35s ease both}
+.am-close{position:fixed;top:24px;right:calc(50% - 380px + 20px);width:40px;height:40px;border-radius:50%;border:1px solid var(--border2);background:rgba(7,13,22,0.8);color:var(--navy2);font-size:16px;cursor:pointer;z-index:210}
+@media(max-width:840px){.am-close{right:20px}}
+.am-img{height:300px;position:relative}
+.am-body{padding:44px}
+.am-meta{display:flex;gap:14px;font-size:11px;color:var(--text3);letter-spacing:1px;margin-bottom:20px}
+.am-title{font-size:clamp(20px,2.8vw,28px);font-weight:800;line-height:1.6;margin-bottom:24px}
+.am-text p{font-size:14px;color:var(--text2);line-height:2.15;margin-bottom:20px}
+.am-desc-box{margin-top:32px;padding:18px 20px;border:1px dashed var(--border2);border-radius:10px;background:rgba(59,125,216,0.03)}
+.am-desc-lbl{font-size:9px;color:var(--navy2);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.am-desc-txt{font-size:11.5px;color:var(--text3);line-height:1.8}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#hero">
+      <div class="logo-mark">FF</div>
+      <div class="logo-text"><b>FunFund</b><span>Real Estate Journal</span></div>
+    </a>
+    <nav>
+      <a href="#trust">安心のしくみ</a>
+      <a href="#concept">コンセプト</a>
+      <a href="#columns">コラム一覧</a>
+      <a href="#guide">投資判断ガイド</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+    <div class="hdr-cta">
+      <a href="#cta" class="btn btn-p">無料会員登録 →</a>
+    </div>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge animate-up"><span class="dot"></span>FUNFUND REAL ESTATE JOURNAL</div>
+        <h1 class="hero-title animate-up d1"><span class="gradient-text">堅実という、</span><br>教養に投資する。</h1>
+        <p class="hero-sub animate-up d2">利回りの数字だけでは見えない、仕組みとリスク。<br>不動産クラウドファンディング「FunFund」が贈る、<br><strong style="color:var(--navy2)">大人のための資産形成コラム。</strong></p>
+        <div class="hero-actions animate-up d3">
+          <a href="#columns" class="btn btn-p btn-lg glow">コラムを読む</a>
+          <a href="#cta" class="btn btn-o btn-lg">無料会員登録 →</a>
+        </div>
+        <div class="hero-stats animate-up d4">
+          <div><div class="hs-val gradient-text">120+</div><div class="hs-label">Column Archive</div></div>
+          <div><div class="hs-val" style="color:var(--gold2)">30,000+</div><div class="hs-label">Registered Investors</div></div>
+          <div><div class="hs-val" style="color:var(--green)">100%</div><div class="hs-label">元本償還実績案件</div></div>
+        </div>
+      </div>
+      <div class="hero-card-wrap">
+        <div class="hero-card" id="heroPickupCard">
+          <!-- filled by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<div id="kpi">
+  <div class="container" style="padding:0">
+    <div class="kpi-grid">
+      <div class="kpi-card" style="--c:var(--navy2)"><div class="kc-val gradient-text">30,000+</div><div class="kc-lbl">登録投資家数</div><div class="kc-sub">名</div></div>
+      <div class="kpi-card" style="--c:var(--gold2)"><div class="kc-val" style="color:var(--gold2)">120+</div><div class="kc-lbl">組成案件数</div><div class="kc-sub">件</div></div>
+      <div class="kpi-card" style="--c:var(--green)"><div class="kc-val" style="color:var(--green)">100%</div><div class="kc-lbl">元本償還実績</div><div class="kc-sub">運用完了案件</div></div>
+      <div class="kpi-card" style="--c:var(--teal)"><div class="kc-val" style="color:var(--teal)">1万円〜</div><div class="kc-lbl">最低投資額</div><div class="kc-sub">から始められる</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="trust">
+  <div class="container">
+    <div class="sec-hd">
+      <div class="sec-badge"><span class="tag tag-green">🛡️ 安心のしくみ</span></div>
+      <h2 class="sec-title">「なぜ安心なのか」を、<br>数字と仕組みで説明する。</h2>
+      <p class="sec-desc">利回りの高さだけで判断してほしくない。FunFundが大切にしているのは、投資家を守るための仕組みを正直に開示することです。</p>
+    </div>
+    <div class="tr-box">
+      <div class="tr-title">「絶対に安全」とは言わない。<em>だから、仕組みで守る。</em></div>
+      <p class="tr-body">不動産投資にリスクがないという説明は、誠実ではありません。FunFundは<strong style="color:#fff">優先劣後出資方式</strong>や<strong style="color:#fff">第三者管理信託</strong>といった、投資家保護のための仕組みをすべての案件で開示し、リスクと向き合った上で堅実に資産形成を続けられる環境を提供します。</p>
+      <div class="tr-grid">
+        <div class="tr-item"><div class="tr-ico">🏛️</div><div class="tr-t">優先劣後出資方式</div><div class="tr-d">損失が発生した場合、まず運用会社の劣後出資分から負担。投資家の元本を優先的に保護する構造です。</div></div>
+        <div class="tr-item"><div class="tr-ico">🔐</div><div class="tr-t">第三者管理信託</div><div class="tr-d">対象不動産は信託銀行等が分別管理。運用会社が万が一破綻しても資産は保全されます。</div></div>
+        <div class="tr-item"><div class="tr-ico">📋</div><div class="tr-t">情報開示の徹底</div><div class="tr-d">想定利回りの算出根拠、運用会社の実績、リスク要因を契約前書面で明確に開示しています。</div></div>
+        <div class="tr-item"><div class="tr-ico">🧾</div><div class="tr-t">宅地建物取引業免許</div><div class="tr-d">国土交通大臣（1）第XXXXX号。不動産特定共同事業法に基づく許可事業者として運営しています。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="concept">
+  <div class="container">
+    <div class="con-grid">
+      <div>
+        <div class="sec-badge"><span class="tag tag-navy">コラムのコンセプト</span></div>
+        <div class="con-quote">
+          <p>資産形成は、<br><em>「知ること」から始まる。</em></p>
+        </div>
+        <p class="con-body">FunFund 不動産投資コラムは、不動産クラウドファンディングという投資手法を「よくわからないまま数字だけで選ぶもの」から「仕組みを理解した上で堅実に選ぶもの」へと読み替えるための編集コンテンツです。利回りの裏側、税金の基本、エリアの将来性、そしてリスクとの向き合い方。四つの視点から、大人が本当に知るべき"堅実さ"を紐解きます。</p>
+      </div>
+      <div class="cp-list">
+        <div class="cp"><div class="cp-ico">◆</div><div><div class="cp-t">データに基づく解説</div><div class="cp-d">利回りの計算根拠、人口動態、賃料相場を数値と根拠で語る</div></div></div>
+        <div class="cp"><div class="cp-ico">◆</div><div><div class="cp-t">リスクも正直に伝える</div><div class="cp-d">「絶対安全」という表現を避け、起こり得るリスクを丁寧に説明する</div></div></div>
+        <div class="cp"><div class="cp-ico">◆</div><div><div class="cp-t">専門家による監修</div><div class="cp-d">宅地建物取引士・税理士等の専門家がコラム内容を確認しています</div></div></div>
+        <div class="cp"><div class="cp-ico">◆</div><div><div class="cp-t">初心者にもわかりやすく</div><div class="cp-d">専門用語をかみ砕き、投資が初めての方にも読み進めやすい構成</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="pickup">
+  <div class="container">
+    <div class="sec-hd">
+      <div class="sec-badge"><span class="tag tag-gold">Editor's Pickup</span></div>
+      <h2 class="sec-title">今週の一本</h2>
+      <p class="sec-desc">編集部が選ぶ、いま読むべき不動産投資コラムの一篇。</p>
+    </div>
+    <div id="pickupCard"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="columns">
+  <div class="container">
+    <div class="sec-hd">
+      <div class="sec-badge"><span class="tag tag-teal">Column Archive</span></div>
+      <h2 class="sec-title">コラム一覧</h2>
+      <p class="sec-desc">利回り・安心のしくみ・税金・エリア分析・リスク管理 ― カテゴリで絞り込み、じっくりとお読みください。</p>
+    </div>
+    <div class="filter-tags" id="filterTags"></div>
+    <div class="col-grid" id="colGrid"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="guide">
+  <div class="container">
+    <div class="sec-badge"><span class="tag tag-gold">Investor's Guide</span></div>
+    <h2 class="sec-title">案件選びの5つの視点</h2>
+    <p class="sec-desc">利回りの数字の裏側にある「本質的な安心材料」を見極めるための、5つのチェックポイント。</p>
+    <div class="guide-grid">
+      <div class="guide"><div class="guide-n">01</div><div class="guide-i">📊</div><div class="guide-l">利回りの根拠<br>算出の前提条件</div></div>
+      <div class="guide"><div class="guide-n">02</div><div class="guide-i">🛡️</div><div class="guide-l">劣後出資比率<br>投資家保護の厚み</div></div>
+      <div class="guide"><div class="guide-n">03</div><div class="guide-i">🗺️</div><div class="guide-l">エリアの将来性<br>人口動態と再開発</div></div>
+      <div class="guide"><div class="guide-n">04</div><div class="guide-i">🏢</div><div class="guide-l">運用会社の実績<br>免許番号・設立年数</div></div>
+      <div class="guide"><div class="guide-n">05</div><div class="guide-i">🚪</div><div class="guide-l">出口戦略<br>売却・償還の想定</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="faq">
+  <div class="container">
+    <div class="sec-badge"><span class="tag tag-navy">FAQ</span></div>
+    <h2 class="sec-title">よくある質問</h2>
+    <p class="sec-desc">投資を始める前に、多くの方が気になるポイントにお答えします。</p>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="cta">
+  <div class="container">
+    <div style="display:inline-block;margin-bottom:24px;"><span class="tag tag-navy">Membership</span></div>
+    <h2 class="cta-t">堅実な資産形成を、<br><span class="gradient-text">今日から始めよう。</span></h2>
+    <p class="cta-d">FunFund 会員限定で、新着コラムと限定案件情報をいち早くお届けします。</p>
+    <form class="cta-form" onsubmit="return false;">
+      <input type="email" placeholder="メールアドレスを入力" required>
+      <button type="submit" class="btn btn-p btn-lg">無料登録する</button>
+    </form>
+    <p class="cta-note">FunFund 不動産投資コラム — 毎週更新</p>
+  </div>
+</section>
+
+<footer>
+  <p class="disclaimer">本サイトのコラムは情報提供を目的としたものであり、投資勧誘を目的としたものではありません。不動産クラウドファンディングは元本および利回りが保証された商品ではなく、市況・運用状況により分配金・償還金が想定を下回る、または元本の一部が毀損する可能性があります。投資判断は、契約成立前書面等の内容を十分にご確認の上、ご自身の責任において行ってください。</p>
+  <p><strong>FunFund</strong> — 不動産投資クラウドファンディング</p>
+  <p style="margin-top:6px;">堅実な資産形成という教養を、すべての投資家へ。</p>
+  <p style="margin-top:6px;">© 2026 FunFund. All rights reserved.</p>
+  <p style="margin-top:10px;"><a href="admin.html" rel="nofollow" style="color:var(--text3);font-size:11px;text-decoration:none;letter-spacing:1px;">編集者ログイン</a></p>
+</footer>
+
+<div class="article-modal" id="articleModal">
+  <button class="am-close" id="amClose">✕</button>
+  <div class="am-inner" id="amInner"></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+/* ============================================================
+   COLUMN DATA
+   コラムのシードデータ・保存・読み込みロジックは data.js に分離。
+   ここでは data.js のAPI(ffGetAllColumns等)を使って描画するのみ。
+============================================================ */
+let COLUMNS = ffGetAllColumns();
+const DEFAULT_TITLE = document.getElementById('pageTitle').textContent;
+const DEFAULT_DESC = document.getElementById('metaDesc').getAttribute('content');
+let CATEGORIES = ['すべて', ...Array.from(new Set(COLUMNS.map(c => c.category)))];
+
+const FAQS = [
+  { q:'FunFundとはどのようなサービスですか？', a:'FunFundは、不動産特定共同事業法に基づく許可を受けた事業者が運営する不動産クラウドファンディングサービスです。1万円程度の少額から、複数の投資家と共同で不動産に出資し、賃料収入や売却益に応じた分配金を受け取ることができます。' },
+  { q:'元本割れする可能性はありますか？', a:'元本および利回りが保証された商品ではなく、市況の変動や空室の長期化等により、分配金・償還金が想定を下回る、または元本の一部が毀損する可能性があります。優先劣後出資方式や第三者管理信託等、リスクを低減する仕組みを採用していますが、リスクがゼロになるわけではありません。' },
+  { q:'いくらから投資できますか？', a:'案件によって異なりますが、1万円程度の少額から投資できる案件を多数取り扱っています。まずは少額から始め、仕組みへの理解を深めていただくことをお勧めしています。' },
+  { q:'運用期間中に解約はできますか？', a:'不動産クラウドファンディングは運用期間中の中途解約が原則できない、または制限される商品が一般的です。資金計画に余裕を持った上で、運用期間を確認してから投資判断を行ってください。' },
+  { q:'分配金にはどのような税金がかかりますか？', a:'分配金は雑所得として扱われ、支払時に源泉徴収が行われるのが一般的です。給与所得者の場合、年間の雑所得が20万円以下であれば確定申告が不要となるケースもありますが、住民税の申告要否も含め、詳しくは税理士等の専門家にご相談ください。' }
+];
+
+function renderPickup(){
+  const col = COLUMNS[0];
+  if(!col){ document.getElementById('pickupCard').innerHTML = '<p class="sec-desc">まだコラムがありません。</p>'; return; }
+  const html = `
+    ${ffPhImgHTML(col)}
+    <div class="pickup-body">
+      <div class="pu-meta"><span>${ffEscHtml(col.date)}</span><span>・</span><span>${ffEscHtml(col.read)}で読める</span></div>
+      <div style="margin-bottom:14px"><span class="tag tag-${col.catClass}">${ffEscHtml(col.category)}</span></div>
+      <h3 class="pu-title">${ffEscHtml(col.title)}</h3>
+      <p class="pu-excerpt">${ffEscHtml(col.excerpt)}</p>
+      <span class="pu-link">全文を読む →</span>
+    </div>`;
+  const card = document.createElement('div');
+  card.className = 'pickup-card';
+  card.innerHTML = html;
+  card.addEventListener('click', () => openArticle(col.id));
+  document.getElementById('pickupCard').innerHTML = '';
+  document.getElementById('pickupCard').appendChild(card);
+
+  document.getElementById('heroPickupCard').innerHTML = `
+    <div class="hc-img">${ffPhImgHTML(col)}</div>
+    <div class="hc-body">
+      <div class="hc-lbl">今週のピックアップ</div>
+      <div class="hc-t">${ffEscHtml(col.title)}</div>
+      <div class="hc-tags">
+        <span class="hc-tag">${ffEscHtml(col.category)}</span>
+        <span class="hc-tag">${ffEscHtml(col.read)}</span>
+        <span class="hc-tag">${ffEscHtml(col.date)}</span>
+      </div>
+    </div>`;
+  document.getElementById('heroPickupCard').style.cursor = 'pointer';
+  document.getElementById('heroPickupCard').addEventListener('click', () => openArticle(col.id));
+}
+
+function renderFilters(){
+  const wrap = document.getElementById('filterTags');
+  wrap.innerHTML = CATEGORIES.map((cat, i) =>
+    `<button class="f-tag${i===0?' active':''}" data-cat="${ffEscHtml(cat)}">${ffEscHtml(cat)}</button>`
+  ).join('');
+  wrap.querySelectorAll('.f-tag').forEach(btn => {
+    btn.addEventListener('click', () => {
+      wrap.querySelectorAll('.f-tag').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGrid(btn.dataset.cat);
+    });
+  });
+}
+
+function renderGrid(filter){
+  const grid = document.getElementById('colGrid');
+  const list = (!filter || filter === 'すべて') ? COLUMNS : COLUMNS.filter(c => c.category === filter);
+  grid.innerHTML = '';
+  if(list.length === 0){
+    grid.innerHTML = '<p class="sec-desc">該当するコラムがありません。</p>';
+    return;
+  }
+  list.forEach(col => {
+    const card = document.createElement('div');
+    card.className = 'col-card';
+    card.innerHTML = `
+      ${ffPhImgHTML(col)}
+      <div class="col-body">
+        <div class="col-meta">${ffEscHtml(col.date)}</div>
+        <div class="col-title">${ffEscHtml(col.title)}</div>
+        <div class="col-excerpt">${ffEscHtml(col.excerpt)}</div>
+        <div class="col-read">${ffEscHtml(col.read)}で読める →</div>
+      </div>`;
+    card.addEventListener('click', () => openArticle(col.id));
+    grid.appendChild(card);
+  });
+}
+
+function renderFaq(){
+  const wrap = document.getElementById('faqList');
+  wrap.innerHTML = FAQS.map((f, i) => `
+    <div class="faq-item" data-i="${i}">
+      <div class="faq-q"><span>${ffEscHtml(f.q)}</span><span class="q-ico">+</span></div>
+      <div class="faq-a"><p>${ffEscHtml(f.a)}</p></div>
+    </div>`).join('');
+  wrap.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      wrap.querySelectorAll('.faq-item').forEach(other => {
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+}
+
+function openArticle(id){
+  const col = COLUMNS.find(c => c.id === id);
+  if(!col) return;
+
+  document.title = `${col.title} | FunFund 不動産投資コラム`;
+  document.getElementById('metaDesc').setAttribute('content', col.description);
+
+  document.getElementById('amInner').innerHTML = `
+    <div class="am-img">${ffPhImgHTML(col)}</div>
+    <div class="am-body">
+      <div class="am-meta"><span>${ffEscHtml(col.date)}</span><span>・</span><span>${ffEscHtml(col.read)}で読める</span><span>・</span><span>${ffEscHtml(col.en)}</span></div>
+      <div style="margin-bottom:16px"><span class="tag tag-${col.catClass}">${ffEscHtml(col.category)}</span></div>
+      <h2 class="am-title">${ffEscHtml(col.title)}</h2>
+      <div class="am-text">${col.body.map(p => `<p>${ffEscHtml(p)}</p>`).join('')}</div>
+      <div class="am-desc-box">
+        <div class="am-desc-lbl">Meta Description</div>
+        <div class="am-desc-txt">${ffEscHtml(col.description)}</div>
+      </div>
+    </div>`;
+
+  document.getElementById('articleModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if(location.hash !== '#article=' + id){
+    history.pushState({article:id}, '', '#article=' + id);
+  }
+}
+
+function closeArticle(){
+  document.getElementById('articleModal').classList.remove('open');
+  document.body.style.overflow = '';
+  document.title = DEFAULT_TITLE;
+  document.getElementById('metaDesc').setAttribute('content', DEFAULT_DESC);
+  if(location.hash.startsWith('#article=')){
+    history.pushState({}, '', location.pathname + location.search);
+  }
+}
+
+document.getElementById('amClose').addEventListener('click', closeArticle);
+document.getElementById('articleModal').addEventListener('click', e => {
+  if(e.target.id === 'articleModal') closeArticle();
+});
+window.addEventListener('popstate', () => {
+  const m = location.hash.match(/^#article=(.+)$/);
+  if(m) openArticle(m[1]); else closeArticle();
+});
+
+renderPickup();
+renderFilters();
+renderGrid('すべて');
+renderFaq();
+
+const initMatch = location.hash.match(/^#article=(.+)$/);
+if(initMatch) openArticle(initMatch[1]);
+</script>
+
+</body>
+</html>
