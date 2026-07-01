@@ -116,6 +116,54 @@ section{padding:104px 0;position:relative;z-index:1}
 .cp-ico{font-size:19px;flex-shrink:0;margin-top:1px;color:var(--navy2)}
 .cp-t{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:.3px}
 .cp-d{font-size:12px;color:var(--text2);line-height:1.8}
+/* producer / host */
+#producer{background:var(--bg1)}
+.host-grid{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start;margin-top:48px}
+@media(max-width:1024px){.host-grid{grid-template-columns:1fr}}
+.host-photo{border-radius:16px;overflow:hidden;border:1px solid var(--border2);box-shadow:0 30px 80px rgba(0,0,0,0.6),0 0 40px rgba(59,125,216,0.07);position:relative;height:340px}
+.host-photo-tag{position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);white-space:nowrap;background:rgba(11,21,34,0.95);border:1px solid var(--border2);border-radius:50px;padding:7px 18px;font-size:10px;color:var(--navy2);font-weight:700;letter-spacing:1px;backdrop-filter:blur(10px)}
+.h-name{font-size:clamp(24px,3.2vw,34px);font-weight:800;letter-spacing:.2px;margin-bottom:4px}
+.h-en{font-size:12px;color:var(--text3);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px}
+.h-titles{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.h-t{font-size:13px;color:var(--text2);display:flex;align-items:center;gap:8px}
+.h-t::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--navy2);flex-shrink:0}
+.h-bio{font-size:14px;color:var(--text2);line-height:1.95;margin-bottom:28px}
+.tl{position:relative;padding-left:28px}
+.tl::before{content:'';position:absolute;left:6px;top:4px;bottom:4px;width:1px;background:linear-gradient(180deg,var(--navy2),var(--teal),var(--gold))}
+.tl-i{position:relative;margin-bottom:22px}
+.tl-i::before{content:'';position:absolute;left:-25px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--bg1);border:2px solid var(--navy2);box-shadow:0 0 8px rgba(59,125,216,0.4)}
+.tl-y{font-size:10px;color:var(--navy2);letter-spacing:1.5px;font-weight:700;margin-bottom:3px}
+.tl-t{font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.tl-b{font-size:12px;color:var(--text2);line-height:1.8}
+.str-wrap{margin-top:28px}
+.str-lbl{font-size:9px;color:var(--text3);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.str-grid{display:flex;flex-wrap:wrap;gap:7px}
+.str-t{font-size:11px;padding:5px 12px;border-radius:8px;background:rgba(59,125,216,0.05);color:var(--text2);border:1px solid var(--border);transition:.2s}
+.str-t:hover{border-color:var(--border2);color:var(--navy2)}
+/* podcast */
+#podcast{background:var(--bg0)}
+.podcast-intro{display:flex;justify-content:center;margin-top:44px}
+.podcast-card{max-width:640px;width:100%;background:rgba(11,21,34,0.85);border:1px solid var(--border2);border-radius:16px;padding:32px;position:relative;overflow:hidden}
+.podcast-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent)}
+.pc-host{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.pc-av{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--teal));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff;flex-shrink:0}
+.pc-name{font-size:14px;font-weight:700;color:#fff}
+.pc-role{font-size:11px;color:var(--gold2);margin-top:2px}
+.ch-wrap{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:24px 0}
+.ch{display:flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;background:rgba(7,13,22,0.9);border:1px solid var(--border);font-size:13px;font-weight:600;color:var(--text2);transition:all .3s}
+.ch:hover{border-color:var(--border2);color:#fff}
+.sch-row{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:16px}
+.sch{background:rgba(7,13,22,0.8);border:1px solid var(--border);border-radius:12px;padding:14px 22px;display:flex;align-items:center;gap:12px}
+.sch-ico{font-size:20px}
+.sch-v{font-size:13px;font-weight:800;color:#fff}
+.sch-l{font-size:10px;color:var(--text3);letter-spacing:.5px}
+.ep-groups{margin-top:52px}
+.ep-g{margin-bottom:32px}
+.ep-gt{font-size:13px;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:12px}
+.ep-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:5px}
+.ep-item{background:rgba(11,21,34,0.7);border:1px solid var(--border);border-radius:8px;padding:9px 13px;font-size:12px;color:var(--text2);display:flex;align-items:flex-start;gap:7px;transition:.2s;line-height:1.5}
+.ep-item:hover{border-color:var(--border2);color:#fff}
+.ep-n{color:var(--navy2);font-weight:700;font-size:10px;min-width:32px;margin-top:1px;letter-spacing:.5px}
 /* pickup */
 #pickup{background:var(--bg1)}
 .pickup-card{display:grid;grid-template-columns:420px 1fr;border:1px solid var(--border2);border-radius:16px;overflow:hidden;background:rgba(11,21,34,0.6);cursor:pointer;transition:.35s}
@@ -211,6 +259,8 @@ footer strong{color:var(--text2)}
     <nav>
       <a href="#trust">安心のしくみ</a>
       <a href="#concept">コンセプト</a>
+      <a href="#producer">プロデューサー</a>
+      <a href="#podcast">Podcast</a>
       <a href="#columns">コラム一覧</a>
       <a href="#guide">投資判断ガイド</a>
       <a href="#faq">よくある質問</a>
@@ -299,6 +349,106 @@ footer strong{color:var(--text2)}
         <div class="cp"><div class="cp-ico">◆</div><div><div class="cp-t">リスクも正直に伝える</div><div class="cp-d">「絶対安全」という表現を避け、起こり得るリスクを丁寧に説明する</div></div></div>
         <div class="cp"><div class="cp-ico">◆</div><div><div class="cp-t">専門家による監修</div><div class="cp-d">宅地建物取引士・税理士等の専門家がコラム内容を確認しています</div></div></div>
         <div class="cp"><div class="cp-ico">◆</div><div><div class="cp-t">初心者にもわかりやすく</div><div class="cp-d">専門用語をかみ砕き、投資が初めての方にも読み進めやすい構成</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="producer">
+  <div class="container">
+    <div class="sec-badge"><span class="tag tag-navy">コラムメインプロデューサー</span></div>
+    <h2 class="sec-title">コラムを率いるプロフェッショナル</h2>
+    <p class="sec-desc">30年以上にわたり金融・資産運用の最前線に立ち続けてきた実務家が、コンテンツの企画・監修を担います。</p>
+    <div class="host-grid">
+      <div class="host-photo ph-img" style="--c1:#182c40;--c2:#0b1620" data-mono="鈴">
+        <div class="host-photo-tag">コラムメインプロデューサー</div>
+      </div>
+      <div>
+        <h3 class="h-name">鈴井 浩史</h3>
+        <p class="h-en">Hiroshi Suzui</p>
+        <div class="h-titles">
+          <div class="h-t">株式会社フロンティアハウス 常務執行役員 CAO（Chief Asset Officer）</div>
+          <div class="h-t">アセットコンサルティング事業部 部長</div>
+          <div class="h-t">元 野村證券株式会社 確定拠出年金部 部長</div>
+        </div>
+        <p class="h-bio">野村證券にて30年以上にわたり、法人・富裕層営業、資産運用提案、支店マネジメント、営業企画、政策提言等に携わる。上場企業・未上場優良企業・医療法人・宗教法人・学校法人など多様な顧客層を対象に、証券取引・保険・デリバティブ・不動産・事業承継・M&amp;A支援等のソリューション営業を実践。各地の支店長として地域経済の成長を牽引し、本社では全国180店舗のエリアマネジメントを統括。現在は<strong style="color:#fff">金融×不動産を融合した収益モデルの最適化</strong>を推進し、FunFundのコラム・ポッドキャストの企画監修を担う。</p>
+        <div class="tl">
+          <div class="tl-i"><div class="tl-y">1988</div><div class="tl-t">野村證券株式会社 入社</div><div class="tl-b">新宿・名古屋・柏支店等で新規顧客開拓から大型資産の預かりまで着実に成果をあげ、東京地区トップクラスの収益を記録。</div></div>
+          <div class="tl-i"><div class="tl-y">Career</div><div class="tl-t">山形・静岡・広島 営業責任者</div><div class="tl-b">地域特性に基づいた商品組成（デリバティブ、指数連動債、変額年金など）により大口収益を創出。月間最高収益2億円を計上。</div></div>
+          <div class="tl-i"><div class="tl-y">Career</div><div class="tl-t">青森・福井支店 支店長</div><div class="tl-b">公募増資やM&amp;A支援、私募リート、為替連動債等の大型案件を成功に導く。青森支店では県トップ地銀の主幹事変更を実現しCEO表彰を受賞。</div></div>
+          <div class="tl-i"><div class="tl-y">Career</div><div class="tl-t">横浜支店 副支店長</div><div class="tl-b">250名の人材マネジメントを統括。自治体第三セクターの取締役としても地域経済に貢献。</div></div>
+          <div class="tl-i"><div class="tl-y">Career</div><div class="tl-t">本社営業企画部 統括エリアマネージャー</div><div class="tl-b">全国180支店・8地区の営業統括を担い、戦略策定・商品供給・営業支援・人材育成を一体で推進。</div></div>
+          <div class="tl-i"><div class="tl-y">現在</div><div class="tl-t">フロンティアハウス 常務執行役員 CAO</div><div class="tl-b">確定拠出年金部長として培った政策提言の知見を活かし、GX（グリーントランスフォーメーション）の観点を取り入れたアセット戦略、不動産の取得・開発・運用・売却を一体でマネジメントする収益モデルを推進。クラウドファンディングでは商品設計・リスク管理・ポートフォリオ戦略を担う。</div></div>
+        </div>
+        <div class="str-wrap">
+          <div class="str-lbl">専門領域・実績</div>
+          <div class="str-grid">
+            <span class="str-t">💹 資産運用提案</span><span class="str-t">🤝 法人営業</span><span class="str-t">🏢 組織マネジメント</span><span class="str-t">📜 政策提言（金融庁・厚労省等）</span><span class="str-t">🏛️ 資本戦略・人的資本経営</span><span class="str-t">🌱 GXアセット戦略</span><span class="str-t">🏘️ 金融×不動産融合モデル</span><span class="str-t">📊 ポートフォリオ戦略</span><span class="str-t">🌏 海外IR（19回）</span><span class="str-t">🎓 全国20大学 講師歴</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="podcast">
+  <div class="container" style="text-align:center;">
+    <div class="sec-badge" style="display:inline-block"><span class="tag tag-gold">🎙️ Podcast</span></div>
+    <h2 class="sec-title">耳で学ぶ、堅実な資産形成。</h2>
+    <p class="sec-desc" style="margin:0 auto;">コラムでは伝えきれない実務の温度感を、音声で。FunFund 不動産投資ポッドキャストが、案件の裏側と資産形成の本質を語ります。</p>
+    <div class="podcast-intro">
+      <div class="podcast-card">
+        <div class="pc-host">
+          <div class="pc-av">鈴</div>
+          <div>
+            <div class="pc-name">鈴井 浩史（Hiroshi Suzui）</div>
+            <div class="pc-role">パーソナリティ・コラムメインプロデューサー</div>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--text2);line-height:1.9;text-align:left;">元野村證券で30年以上の実務経験を持つプロフェッショナルが、案件審査の視点、リスクとの向き合い方、市況の読み方まで、実務者だからこそ語れる内容を毎回お届けします。</p>
+        <div class="ch-wrap">
+          <div class="ch">🎵 Apple Podcasts</div><div class="ch">💚 Spotify</div><div class="ch">▶️ YouTube</div><div class="ch">📻 Voicy</div>
+        </div>
+        <div class="sch-row">
+          <div class="sch"><span class="sch-ico">📅</span><div><div class="sch-v">毎週金曜配信</div><div class="sch-l">Weekly Release</div></div></div>
+          <div class="sch"><span class="sch-ico">⏱️</span><div><div class="sch-v">15〜20分</div><div class="sch-l">Per Episode</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="ep-groups" style="text-align:left;">
+      <div class="ep-g">
+        <div class="ep-gt">📊 利回り・案件分析</div>
+        <div class="ep-list">
+          <div class="ep-item"><span class="ep-n">EP01</span>想定利回りはどう計算されているのか</div>
+          <div class="ep-item"><span class="ep-n">EP02</span>高利回り案件に潜む注意点</div>
+          <div class="ep-item"><span class="ep-n">EP03</span>事業計画書の読み方</div>
+        </div>
+      </div>
+      <div class="ep-g">
+        <div class="ep-gt">🛡️ 安心のしくみ・リスク管理</div>
+        <div class="ep-list">
+          <div class="ep-item"><span class="ep-n">EP04</span>優先劣後出資方式を実務者が解説</div>
+          <div class="ep-item"><span class="ep-n">EP05</span>第三者管理信託とは何か</div>
+          <div class="ep-item"><span class="ep-n">EP06</span>元本毀損は本当に起こるのか</div>
+        </div>
+      </div>
+      <div class="ep-g">
+        <div class="ep-gt">💰 税金・出口戦略</div>
+        <div class="ep-list">
+          <div class="ep-item"><span class="ep-n">EP07</span>分配金にかかる税金の基本</div>
+          <div class="ep-item"><span class="ep-n">EP08</span>出口戦略の見極め方</div>
+        </div>
+      </div>
+      <div class="ep-g">
+        <div class="ep-gt">🗺️ エリア分析・マーケットトレンド</div>
+        <div class="ep-list">
+          <div class="ep-item"><span class="ep-n">EP09</span>都心5区の賃貸需要を読み解く</div>
+          <div class="ep-item"><span class="ep-n">EP10</span>金利動向と不動産市況の関係</div>
+        </div>
       </div>
     </div>
   </div>
